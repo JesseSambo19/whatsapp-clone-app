@@ -90,8 +90,50 @@ class Calls extends StatelessWidget {
     }
 
     return Scaffold(
-      body: Column(
+      body: ListView(
         children: [
+          _myCalls(
+            "Jason",
+            "(3) Today, 18:29",
+            "https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY",
+            Icon(Icons.arrow_forward, color: Theme.of(context).primaryColor),
+          ),
+          _myCalls(
+            "Jason",
+            "(3) Today, 18:29",
+            "https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY",
+            Icon(Icons.arrow_forward, color: Theme.of(context).primaryColor),
+          ),
+          _myCalls(
+            "Jason",
+            "(3) Today, 18:29",
+            "https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY",
+            Icon(Icons.arrow_forward, color: Theme.of(context).primaryColor),
+          ),
+          _myCalls(
+            "Jason",
+            "(3) Today, 18:29",
+            "https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY",
+            Icon(Icons.arrow_forward, color: Theme.of(context).primaryColor),
+          ),
+          _myCalls(
+            "Jason",
+            "(3) Today, 18:29",
+            "https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY",
+            Icon(Icons.arrow_forward, color: Theme.of(context).primaryColor),
+          ),
+          _myCalls(
+            "Jason",
+            "(3) Today, 18:29",
+            "https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY",
+            Icon(Icons.arrow_forward, color: Theme.of(context).primaryColor),
+          ),
+          _myCalls(
+            "Jason",
+            "(3) Today, 18:29",
+            "https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY",
+            Icon(Icons.arrow_forward, color: Theme.of(context).primaryColor),
+          ),
           _myCalls(
             "Jason",
             "(3) Today, 18:29",
