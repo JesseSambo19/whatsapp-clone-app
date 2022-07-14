@@ -21,7 +21,7 @@ class Status extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(50), // was 11.5
                     child: Image.network(
-                        'https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY'),
+                        'https://i.picsum.photos/id/129/4910/3252.jpg?hmac=g1KzJMIp75lG_scR48R1baC6TjhVmkEyygSyngKYRsg'),
                     // Image.asset("assets/images/girl.jpg"),
                     // Image.asset("assets/images/Male.jpg"),
                   ),
@@ -53,7 +53,7 @@ class Status extends StatelessWidget {
                           height: 5,
                         ),
                         Text(
-                          "No updates",
+                          "Tap to add status update",
                           style: TextStyle(
                             fontSize: 18,
                             color: Colors.grey,
@@ -63,15 +63,15 @@ class Status extends StatelessWidget {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 0, left: 30.0),
-                  child: IconButton(
-                      icon: Icon(
-                        Icons.search,
-                        color: Theme.of(context).primaryColor,
-                      ),
-                      onPressed: () {}),
-                ),
+                // Padding(
+                //   padding: const EdgeInsets.only(top: 0, left: 30.0),
+                //   child: IconButton(
+                //       icon: Icon(
+                //         Icons.search,
+                //         color: Theme.of(context).primaryColor,
+                //       ),
+                //       onPressed: () {}),
+                // ),
               ],
             ),
           ),

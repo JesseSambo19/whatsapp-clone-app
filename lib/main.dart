@@ -37,7 +37,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // global color theme for the app theme
-        primarySwatch: Colors.green,
+        primarySwatch: Colors.teal,
         // accentColor: Colors.amber,
         // errorColor: Colors.red,
         fontFamily: "Quicksand",
@@ -69,7 +69,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
           ),
           actions: <Widget>[
             IconButton(icon: const Icon(Icons.search), onPressed: () {}),
-            IconButton(icon: const Icon(Icons.settings), onPressed: () {}),
+            IconButton(icon: const Icon(Icons.menu), onPressed: () {}),
           ],
           bottom: TabBar(
             controller: TabBarController,
