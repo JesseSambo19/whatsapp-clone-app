@@ -15,16 +15,11 @@ class Status extends StatelessWidget {
             padding: const EdgeInsets.all(10.0),
             child: Row(
               children: [
-                SizedBox(
-                  height: 50,
-                  width: 50,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(50), // was 11.5
-                    child: Image.network(
-                        'https://i.picsum.photos/id/129/4910/3252.jpg?hmac=g1KzJMIp75lG_scR48R1baC6TjhVmkEyygSyngKYRsg'),
-                    // Image.asset("assets/images/girl.jpg"),
-                    // Image.asset("assets/images/Male.jpg"),
-                  ),
+                const CircleAvatar(
+                  radius: 25,
+                  backgroundImage: AssetImage("assets/images/profile-pic.jpg"),
+                  // Image.asset("assets/images/girl.jpg"),
+                  // Image.asset("assets/images/Male.jpg"),
                 ),
                 // Image(
                 //   image: AssetImage("assets/images/girl.jpg"),

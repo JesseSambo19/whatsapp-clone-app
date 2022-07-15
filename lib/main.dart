@@ -15,18 +15,18 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
-  late TabController TabBarController;
+  late TabController tabBarController;
 
   @override
   void initState() {
     super.initState();
 
-    TabBarController = TabController(length: 4, vsync: this);
+    tabBarController = TabController(length: 4, vsync: this);
   }
 
   @override
   void dispose() {
-    TabBarController.dispose();
+    tabBarController.dispose();
 
     super.dispose();
   }
@@ -63,26 +63,29 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
         ),
       ),
       home: Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(
           title: const Text(
-            "WhatsApp",
+            "WhatsApp Clone",
           ),
           actions: <Widget>[
             IconButton(icon: const Icon(Icons.search), onPressed: () {}),
-            IconButton(icon: const Icon(Icons.menu), onPressed: () {}),
+            IconButton(icon: const Icon(Icons.more_vert), onPressed: () {}),
           ],
           bottom: TabBar(
-            controller: TabBarController,
+            controller: tabBarController,
             tabs: const [
               Tab(icon: Icon(Icons.camera_alt)),
-              Tab(text: "CHATS"),
+              Tab(
+                text: "CHATS",
+              ),
               Tab(text: "STATUS"),
               Tab(text: "CALLS"),
             ],
           ),
         ),
         body: TabBarView(
-          controller: TabBarController,
+          controller: tabBarController,
           children: const [
             Center(
               child: Text(
