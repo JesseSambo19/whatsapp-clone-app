@@ -74,20 +74,43 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
           ],
           bottom: TabBar(
             controller: tabBarController,
-            tabs: const [
-              Tab(icon: Icon(Icons.camera_alt)),
-              Tab(
-                text: "CHATS",
+            tabs: [
+              const Tab(icon: Icon(Icons.camera_alt)),
+              Row(
+                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Tab(
+                    text: "CHATS",
+                  ),
+                  Expanded(
+                    child: Container(
+                      width: 20,
+                      padding: const EdgeInsets.all(5.0),
+                      margin: const EdgeInsets.only(left: 5.0),
+                      decoration: const BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.circle,
+                      ),
+                      child: Center(
+                          child: Text(Chats().result().toString(),
+                              style: const TextStyle(
+                                  color: Colors.teal,
+                                  fontWeight: FontWeight.w600))),
+                    ),
+                  ),
+                ],
               ),
-              Tab(text: "STATUS"),
-              Tab(text: "CALLS"),
+              const Tab(
+                text: "STATUS",
+              ),
+              const Tab(text: "CALLS"),
             ],
           ),
         ),
         body: TabBarView(
           controller: tabBarController,
-          children: const [
-            Center(
+          children: [
+            const Center(
               child: Text(
                 "Camera",
                 style: TextStyle(fontSize: 30),
@@ -95,7 +118,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
             ),
             Chats(),
             Status(),
-            Calls(),
+            const Calls(),
           ],
         ),
         // body: ListView(

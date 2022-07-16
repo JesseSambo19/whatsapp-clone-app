@@ -1,83 +1,95 @@
 import 'package:flutter/material.dart';
 
 class Chats extends StatelessWidget {
-  const Chats({Key? key}) : super(key: key);
+  // const Chats({Key? key}) : super(key: key);
+  List<List<String>> chats = [
+    [
+      "Jason",
+      "Lorem ipsum dolor sit amet consectetur." * 3,
+      "assets/images/avatar-1.jpg",
+      "14:27",
+      "6"
+    ],
+    [
+      "Marc",
+      "Lorem ipsum dolor sit amet consectetur." * 3,
+      "assets/images/avatar-2.jpg",
+      "13:50",
+      ""
+    ],
+    [
+      "Sophie",
+      "Lorem ipsum dolor sit amet consectetur." * 3,
+      "assets/images/avatar-3.jpg",
+      "13:22",
+      ""
+    ],
+    [
+      "Jennifer",
+      "Lorem ipsum dolor sit amet consectetur." * 3,
+      "assets/images/avatar-4.jpg",
+      "12:52",
+      ""
+    ],
+    [
+      "William",
+      "Lorem ipsum dolor sit amet consectetur." * 3,
+      "assets/images/avatar-5.jpg",
+      "12:22",
+      "1"
+    ],
+    [
+      "Benedith",
+      "Lorem ipsum dolor sit amet consectetur." * 3,
+      "assets/images/avatar-6.jpg",
+      "10:52",
+      "2"
+    ],
+    [
+      "John",
+      "Lorem ipsum dolor sit amet consectetur." * 3,
+      "assets/images/avatar-7.jpg",
+      "Yesterday",
+      ""
+    ],
+    [
+      "Melissa",
+      "Lorem ipsum dolor sit amet consectetur." * 3,
+      "assets/images/avatar-8.jpg",
+      "Yesterday",
+      "20"
+    ],
+    [
+      "Maggie",
+      "Lorem ipsum dolor sit amet consectetur." * 3,
+      "assets/images/avatar-9.jpg",
+      "13/07/2022",
+      "20"
+    ],
+    [
+      "Thomas",
+      "Lorem ipsum dolor sit amet consectetur." * 3,
+      "assets/images/avatar-10.jpg",
+      "13/07/2022",
+      "20"
+    ],
+  ];
+
+  result() {
+    return int.parse(chats[0][4]) +
+        // int.parse(chats[1][4]) +
+        // int.parse(chats[2][4]) +
+        // int.parse(chats[3][4]) +
+        int.parse(chats[4][4]) +
+        int.parse(chats[5][4]) +
+        // int.parse(chats[6][4]) +
+        int.parse(chats[7][4]) +
+        int.parse(chats[8][4]) +
+        int.parse(chats[9][4]);
+  }
 
   @override
   Widget build(BuildContext context) {
-    List<List<String>> chats = [
-      [
-        "Jason",
-        "Lorem ipsum dolor sit amet consectetur." * 3,
-        "assets/images/avatar-1.jpg",
-        "14:27",
-        "6"
-      ],
-      [
-        "Marc",
-        "Lorem ipsum dolor sit amet consectetur." * 3,
-        "assets/images/avatar-2.jpg",
-        "13:50",
-        ""
-      ],
-      [
-        "Sophie",
-        "Lorem ipsum dolor sit amet consectetur." * 3,
-        "assets/images/avatar-3.jpg",
-        "13:22",
-        ""
-      ],
-      [
-        "Jennifer",
-        "Lorem ipsum dolor sit amet consectetur." * 3,
-        "assets/images/avatar-4.jpg",
-        "12:52",
-        ""
-      ],
-      [
-        "William",
-        "Lorem ipsum dolor sit amet consectetur." * 3,
-        "assets/images/avatar-5.jpg",
-        "12:22",
-        "1"
-      ],
-      [
-        "Benedith",
-        "Lorem ipsum dolor sit amet consectetur." * 3,
-        "assets/images/avatar-6.jpg",
-        "10:52",
-        "2"
-      ],
-      [
-        "John",
-        "Lorem ipsum dolor sit amet consectetur." * 3,
-        "assets/images/avatar-7.jpg",
-        "Yesterday",
-        ""
-      ],
-      [
-        "Melissa",
-        "Lorem ipsum dolor sit amet consectetur." * 3,
-        "assets/images/avatar-8.jpg",
-        "Yesterday",
-        "20"
-      ],
-      [
-        "Maggie",
-        "Lorem ipsum dolor sit amet consectetur." * 3,
-        "assets/images/avatar-9.jpg",
-        "13/07/2022",
-        "20"
-      ],
-      [
-        "Thomas",
-        "Lorem ipsum dolor sit amet consectetur." * 3,
-        "assets/images/avatar-10.jpg",
-        "13/07/2022",
-        "20"
-      ],
-    ];
-
     _chats(String name, String message, String image, String time,
         String counter) {
       Size size = MediaQuery.of(context).size;
@@ -102,15 +114,19 @@ class Chats extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      CircleAvatar(
-                        radius: 25,
-                        backgroundImage: AssetImage(image),
+                      InkWell(
+                        onTap: () {},
+                        radius: 27,
+                        child: CircleAvatar(
+                          radius: 27,
+                          backgroundImage: AssetImage(image),
+                        ),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(
-                          top: 8.0,
+                          top: 5.0,
                           left: 28.0,
-                          bottom: 8.0,
+                          bottom: 5.0,
                         ),
                         child: SizedBox(
                           width: _messageWidth,
@@ -131,6 +147,7 @@ class Chats extends StatelessWidget {
                                   message,
                                   style: const TextStyle(
                                     color: Colors.grey,
+                                    fontSize: 18,
                                   ),
                                   overflow: TextOverflow.ellipsis,
                                 ),
@@ -143,7 +160,7 @@ class Chats extends StatelessWidget {
                   ),
                   counter.isEmpty
                       ? Padding(
-                          padding: const EdgeInsets.only(top: 8),
+                          padding: const EdgeInsets.only(top: 5),
                           child: Column(
                             children: [
                               Text(
@@ -157,14 +174,14 @@ class Chats extends StatelessWidget {
                           ),
                         )
                       : Padding(
-                          padding: const EdgeInsets.only(top: 8),
+                          padding: const EdgeInsets.only(top: 5),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
                               Text(
                                 time,
                                 style: const TextStyle(
-                                  color: Colors.green,
+                                  color: Color.fromRGBO(37, 211, 102, 1),
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
@@ -172,7 +189,7 @@ class Chats extends StatelessWidget {
                                 child: Container(
                                   padding: const EdgeInsets.all(5.0),
                                   decoration: const BoxDecoration(
-                                    color: Colors.lightGreen,
+                                    color: Color.fromRGBO(37, 211, 102, 1),
                                     shape: BoxShape.circle,
                                   ),
                                   child: Center(
