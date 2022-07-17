@@ -38,7 +38,7 @@ class Calls extends StatelessWidget {
         "Sophie",
         "(2) Today, 13:03",
         "assets/images/avatar-3.jpg",
-        const Icon(Icons.video_call),
+        const Icon(Icons.videocam),
         Padding(
           padding: const EdgeInsets.only(right: 5.0),
           child: Transform.rotate(
@@ -78,7 +78,7 @@ class Calls extends StatelessWidget {
         "Benedith",
         "(3) 14 July, 21:47",
         "assets/images/avatar-6.jpg",
-        const Icon(Icons.video_call),
+        const Icon(Icons.videocam),
         Padding(
           padding: const EdgeInsets.only(right: 5.0),
           child: Transform.rotate(
@@ -92,7 +92,7 @@ class Calls extends StatelessWidget {
         "John",
         "12 July, 16:21",
         "assets/images/avatar-7.jpg",
-        const Icon(Icons.video_call),
+        const Icon(Icons.videocam),
         Padding(
           padding: const EdgeInsets.only(right: 5.0),
           child: Transform.rotate(
@@ -298,7 +298,7 @@ class Calls extends StatelessWidget {
         child: FloatingActionButton(
           onPressed: () {},
           tooltip: 'Increment',
-          child: const Icon(Icons.phone),
+          child: const Icon(Icons.add_call),
         ),
       ),
     );

@@ -450,7 +450,7 @@ class Status extends StatelessWidget {
                 },
                 backgroundColor: Colors.grey[100],
                 tooltip: 'Increment',
-                child: const Icon(Icons.add, color: Colors.black54),
+                child: const Icon(Icons.create, color: Colors.black54),
               )), //button first
 
           Container(

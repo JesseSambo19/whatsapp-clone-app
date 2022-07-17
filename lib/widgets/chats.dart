@@ -142,15 +142,21 @@ class Chats extends StatelessWidget {
                                   fontSize: 18,
                                 ),
                               ),
-                              Flexible(
-                                child: Text(
-                                  message,
-                                  style: const TextStyle(
-                                    color: Colors.grey,
-                                    fontSize: 18,
+                              Row(
+                                children: [
+                                  const Icon(Icons.check),
+                                  // const Icon(Icons.check),
+                                  Flexible(
+                                    child: Text(
+                                      message,
+                                      style: const TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 18,
+                                      ),
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
                                   ),
-                                  overflow: TextOverflow.ellipsis,
-                                ),
+                                ],
                               ),
                             ],
                           ),
