@@ -1,11 +1,151 @@
 import 'package:flutter/material.dart';
 
 class Calls extends StatelessWidget {
-  const Calls({Key? key}) : super(key: key);
+  // const Calls({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    _myCalls(String name, String info, String image, Icon call) {
+    List<List<dynamic>> calls = [
+      [
+        "Jason",
+        "(3) Today, 18:29",
+        "assets/images/avatar-1.jpg",
+        const Icon(Icons.phone),
+        Padding(
+          padding: const EdgeInsets.only(right: 5.0),
+          child: Transform.rotate(
+            angle: 200,
+            child: Icon(Icons.arrow_forward,
+                color: Theme.of(context).primaryColor),
+          ),
+        ),
+      ],
+      [
+        "Marc",
+        "Today, 18:01",
+        "assets/images/avatar-2.jpg",
+        const Icon(Icons.phone),
+        Padding(
+          padding: const EdgeInsets.only(right: 5.0),
+          child: Transform.rotate(
+            angle: 200,
+            child: Icon(Icons.arrow_forward,
+                color: Theme.of(context).primaryColor),
+          ),
+        ),
+      ],
+      [
+        "Sophie",
+        "(2) Today, 13:03",
+        "assets/images/avatar-3.jpg",
+        const Icon(Icons.video_call),
+        Padding(
+          padding: const EdgeInsets.only(right: 5.0),
+          child: Transform.rotate(
+            angle: 200,
+            child: const Icon(Icons.arrow_back, color: Colors.red),
+          ),
+        ),
+      ],
+      [
+        "Jennifer",
+        "Yesterday, 16:21",
+        "assets/images/avatar-4.jpg",
+        const Icon(Icons.phone),
+        Padding(
+          padding: const EdgeInsets.only(right: 5.0),
+          child: Transform.rotate(
+            angle: 200,
+            child: const Icon(Icons.arrow_back, color: Colors.red),
+          ),
+        ),
+      ],
+      [
+        "William",
+        "Yesterday, 09:38",
+        "assets/images/avatar-5.jpg",
+        const Icon(Icons.phone),
+        Padding(
+          padding: const EdgeInsets.only(right: 5.0),
+          child: Transform.rotate(
+            angle: 200,
+            child:
+                Icon(Icons.arrow_back, color: Theme.of(context).primaryColor),
+          ),
+        ),
+      ],
+      [
+        "Benedith",
+        "(3) 14 July, 21:47",
+        "assets/images/avatar-6.jpg",
+        const Icon(Icons.video_call),
+        Padding(
+          padding: const EdgeInsets.only(right: 5.0),
+          child: Transform.rotate(
+            angle: 200,
+            child: Icon(Icons.arrow_forward,
+                color: Theme.of(context).primaryColor),
+          ),
+        ),
+      ],
+      [
+        "John",
+        "12 July, 16:21",
+        "assets/images/avatar-7.jpg",
+        const Icon(Icons.video_call),
+        Padding(
+          padding: const EdgeInsets.only(right: 5.0),
+          child: Transform.rotate(
+            angle: 200,
+            child: const Icon(Icons.arrow_back, color: Colors.red),
+          ),
+        ),
+      ],
+      [
+        "Melissa",
+        "12 July, 09:38",
+        "assets/images/avatar-8.jpg",
+        const Icon(Icons.phone),
+        Padding(
+          padding: const EdgeInsets.only(right: 5.0),
+          child: Transform.rotate(
+            angle: 200,
+            child: const Icon(Icons.arrow_back, color: Colors.red),
+          ),
+        ),
+      ],
+      [
+        "Maggie",
+        "(3) 11 July, 15:44",
+        "assets/images/avatar-9.jpg",
+        const Icon(Icons.phone),
+        Padding(
+          padding: const EdgeInsets.only(right: 5.0),
+          child: Transform.rotate(
+            angle: 200,
+            child:
+                Icon(Icons.arrow_back, color: Theme.of(context).primaryColor),
+          ),
+        ),
+      ],
+      [
+        "Thomas",
+        "11 July, 14:54",
+        "assets/images/avatar-10.jpg",
+        const Icon(Icons.phone),
+        Padding(
+          padding: const EdgeInsets.only(right: 5.0),
+          child: Transform.rotate(
+            angle: 200,
+            child:
+                Icon(Icons.arrow_back, color: Theme.of(context).primaryColor),
+          ),
+        ),
+      ],
+    ];
+
+    _myCalls(
+        String name, String info, String image, Icon callIcon, Padding call) {
       return SizedBox(
         width: double.infinity,
         height: 90,
@@ -14,73 +154,56 @@ class Calls extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(10.0),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                SizedBox(
-                  height: 50,
-                  width: 50,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(50), // was 11.5
-                    child: Image.network(image),
-                    // Image.asset("assets/images/girl.jpg"),
-                    // Image.asset("assets/images/Male.jpg"),
-                  ),
-                ),
-                // Image(
-                //   image: AssetImage("assets/images/girl.jpg"),
-                //   width: 5,
-                //   height: 5,
-                // ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    top: 8.0,
-                    left: 28.0,
-                  ),
-                  child: SizedBox(
-                    width: 200,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          name,
-                          textAlign: TextAlign.left,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 5,
-                        ),
-                        Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(right: 5.0),
-                              child: Transform.rotate(
-                                angle: 200,
-                                child: Container(child: call),
-                              ),
-                            ),
-                            Text(
-                              info,
-                              style: const TextStyle(
-                                fontSize: 18,
-                                color: Colors.grey,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
+                Row(
+                  children: [
+                    CircleAvatar(
+                      radius: 27,
+                      backgroundImage: AssetImage(image),
                     ),
-                  ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        top: 5.0,
+                        left: 28.0,
+                        bottom: 5.0,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Text(
+                            name,
+                            textAlign: TextAlign.left,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
+                          ),
+                          Row(
+                            children: [
+                              call,
+                              Text(
+                                info,
+                                style: const TextStyle(
+                                  fontSize: 18,
+                                  color: Colors.grey,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 0, left: 30.0),
                   child: IconButton(
-                      icon: Icon(
-                        Icons.phone,
-                        color: Theme.of(context).primaryColor,
-                      ),
-                      onPressed: () {}),
+                    icon: callIcon,
+                    color: Colors.grey,
+                    onPressed: () {},
+                  ),
                 ),
               ],
             ),
@@ -90,62 +213,93 @@ class Calls extends StatelessWidget {
     }
 
     return Scaffold(
+      backgroundColor: Colors.white,
       body: ListView(
         children: [
           _myCalls(
-            "Jason",
-            "(3) Today, 18:29",
-            "https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY",
-            Icon(Icons.arrow_forward, color: Theme.of(context).primaryColor),
+            calls[0][0],
+            calls[0][1],
+            calls[0][2],
+            calls[0][3],
+            calls[0][4],
           ),
           _myCalls(
-            "Jason",
-            "(3) Today, 18:29",
-            "https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY",
-            Icon(Icons.arrow_forward, color: Theme.of(context).primaryColor),
+            calls[1][0],
+            calls[1][1],
+            calls[1][2],
+            calls[1][3],
+            calls[1][4],
           ),
           _myCalls(
-            "Jason",
-            "(3) Today, 18:29",
-            "https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY",
-            Icon(Icons.arrow_forward, color: Theme.of(context).primaryColor),
+            calls[2][0],
+            calls[2][1],
+            calls[2][2],
+            calls[2][3],
+            calls[2][4],
           ),
           _myCalls(
-            "Jason",
-            "(3) Today, 18:29",
-            "https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY",
-            Icon(Icons.arrow_forward, color: Theme.of(context).primaryColor),
+            calls[3][0],
+            calls[3][1],
+            calls[3][2],
+            calls[3][3],
+            calls[3][4],
           ),
           _myCalls(
-            "Jason",
-            "(3) Today, 18:29",
-            "https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY",
-            Icon(Icons.arrow_forward, color: Theme.of(context).primaryColor),
+            calls[4][0],
+            calls[4][1],
+            calls[4][2],
+            calls[4][3],
+            calls[4][4],
           ),
           _myCalls(
-            "Jason",
-            "(3) Today, 18:29",
-            "https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY",
-            Icon(Icons.arrow_forward, color: Theme.of(context).primaryColor),
+            calls[5][0],
+            calls[5][1],
+            calls[5][2],
+            calls[5][3],
+            calls[5][4],
           ),
           _myCalls(
-            "Jason",
-            "(3) Today, 18:29",
-            "https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY",
-            Icon(Icons.arrow_forward, color: Theme.of(context).primaryColor),
+            calls[6][0],
+            calls[6][1],
+            calls[6][2],
+            calls[6][3],
+            calls[6][4],
           ),
           _myCalls(
-            "Jason",
-            "(3) Today, 18:29",
-            "https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY",
-            Icon(Icons.arrow_forward, color: Theme.of(context).primaryColor),
+            calls[7][0],
+            calls[7][1],
+            calls[7][2],
+            calls[7][3],
+            calls[7][4],
+          ),
+          _myCalls(
+            calls[8][0],
+            calls[8][1],
+            calls[8][2],
+            calls[8][3],
+            calls[8][4],
+          ),
+          _myCalls(
+            calls[9][0],
+            calls[9][1],
+            calls[9][2],
+            calls[9][3],
+            calls[9][4],
+          ),
+          const SizedBox(
+            width: double.infinity,
+            height: 80,
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        tooltip: 'Increment',
-        child: const Icon(Icons.phone),
+      floatingActionButton: SizedBox(
+        width: 60,
+        height: 60,
+        child: FloatingActionButton(
+          onPressed: () {},
+          tooltip: 'Increment',
+          child: const Icon(Icons.phone),
+        ),
       ),
     );
   }

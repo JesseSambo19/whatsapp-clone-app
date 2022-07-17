@@ -5,7 +5,7 @@ class Status extends StatelessWidget {
   List<List<String>> recentUpdates = [
     [
       "Jason",
-      "3 minutes ago",
+      "Just now",
       "assets/images/avatar-1.jpg",
     ],
     [
@@ -60,7 +60,7 @@ class Status extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    _myStatus() {
+    _statusUpdate() {
       return SizedBox(
         width: double.infinity,
         height: 90,
@@ -75,29 +75,29 @@ class Status extends StatelessWidget {
                   children: [
                     Stack(
                       children: [
-                        const CircleAvatar(
-                          radius: 27,
-                          backgroundImage:
-                              AssetImage("assets/images/profile-pic.jpg"),
+                        const SizedBox(
+                          width: 65,
+                          height: 60,
+                          child: CircleAvatar(
+                            radius: 27,
+                            backgroundImage:
+                                AssetImage("assets/images/profile-pic.jpg"),
+                          ),
                         ),
                         Positioned(
-                          right: -5,
-                          bottom: -5,
+                          right: -1.5,
+                          bottom: -1.5,
                           child: Container(
-                            width: 25,
-                            height: 25,
-                            padding: const EdgeInsets.all(0.0),
                             decoration: BoxDecoration(
-                                color: Theme.of(context).primaryColor,
+                                // color: Theme.of(context).primaryColor,
                                 shape: BoxShape.circle,
                                 border:
                                     Border.all(color: Colors.white, width: 2)),
-                            child: const Center(
-                                child: Text("+",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 25))),
+                            child: const CircleAvatar(
+                                backgroundColor:
+                                    Color.fromRGBO(18, 140, 126, 1),
+                                radius: 12,
+                                child: Icon(Icons.add, color: Colors.white)),
                           ),
                         ),
                       ],
@@ -105,7 +105,7 @@ class Status extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(
                         top: 5.0,
-                        left: 28.0,
+                        left: 20.0,
                         bottom: 5.0,
                       ),
                       child: Column(
@@ -142,6 +142,79 @@ class Status extends StatelessWidget {
                 //       onPressed: () {}),
                 // ),
                 Container(),
+              ],
+            ),
+          ),
+        ),
+      );
+    }
+
+    _noStatusUpdate(String name, String update, String image) {
+      return SizedBox(
+        width: double.infinity,
+        height: 90,
+        child: Card(
+          elevation: 0,
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(2.5),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: const Color.fromRGBO(37, 211, 102, 1),
+                          width: 2.5,
+                        ),
+                      ),
+                      child: CircleAvatar(
+                        radius: 27,
+                        backgroundImage: AssetImage(image),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        top: 5.0,
+                        left: 20.0,
+                        bottom: 5.0,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Text(
+                            name,
+                            textAlign: TextAlign.left,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
+                          ),
+                          Text(
+                            update,
+                            style: const TextStyle(
+                              fontSize: 18,
+                              color: Colors.grey,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 0, left: 30.0),
+                  child: IconButton(
+                      icon: Icon(
+                        Icons.more_horiz,
+                        color: Theme.of(context).primaryColor,
+                      ),
+                      onPressed: () {}),
+                ),
               ],
             ),
           ),
@@ -268,9 +341,12 @@ class Status extends StatelessWidget {
     }
 
     return Scaffold(
+      backgroundColor: Colors.white,
       body: ListView(
         children: [
-          _myStatus(),
+          _statusUpdate(),
+          _noStatusUpdate(
+              "My status", "Just now", "assets/images/profile-pic.jpg"),
           Container(
             alignment: Alignment.topLeft,
             padding: const EdgeInsets.only(top: 5, left: 20.0),
@@ -345,12 +421,55 @@ class Status extends StatelessWidget {
             viewedUpdates[4][1],
             viewedUpdates[4][2],
           ),
+          const SizedBox(
+            width: double.infinity,
+            height: 80,
+          ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        tooltip: 'Increment',
-        child: const Icon(Icons.camera_alt),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {},
+      //   tooltip: 'Increment',
+      //   child: const Icon(Icons.camera_alt),
+      // ),
+      floatingActionButton: Wrap(
+        //will break to another line on overflow
+        direction: Axis.vertical, //use vertical to show  on vertical axis
+        children: <Widget>[
+          Container(
+              width: 50,
+              height: 50,
+              margin: const EdgeInsets.only(
+                // top: 10,
+                left: 15,
+                bottom: 10,
+              ),
+              child: FloatingActionButton(
+                onPressed: () {
+                  //action code for button 1
+                },
+                backgroundColor: Colors.grey[100],
+                tooltip: 'Increment',
+                child: const Icon(Icons.add, color: Colors.black54),
+              )), //button first
+
+          Container(
+              width: 60,
+              height: 60,
+              margin: const EdgeInsets.only(
+                top: 10,
+                left: 10,
+                // right: 5,
+                // bottom: 5,
+              ),
+              child: FloatingActionButton(
+                onPressed: () {
+                  //action code for button 2
+                },
+                tooltip: 'Increment',
+                child: const Icon(Icons.camera_alt),
+              )), // button second
+        ],
       ),
     );
   }

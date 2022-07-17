@@ -77,7 +77,6 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
             tabs: [
               const Tab(icon: Icon(Icons.camera_alt)),
               Row(
-                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Tab(
                     text: "CHATS",
@@ -85,7 +84,8 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
                   Expanded(
                     child: Container(
                       width: 20,
-                      padding: const EdgeInsets.all(5.0),
+                      height: 20,
+                      // padding: const EdgeInsets.all(5.0),
                       margin: const EdgeInsets.only(left: 5.0),
                       decoration: const BoxDecoration(
                         color: Colors.white,
@@ -100,10 +100,24 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
                   ),
                 ],
               ),
-              const Tab(
-                text: "STATUS",
+              Row(
+                children: const [
+                  Tab(
+                    text: "STATUS",
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 4.0),
+                    child: CircleAvatar(
+                      radius: 3,
+                      backgroundColor: Colors.white,
+                      // backgroundImage: AssetImage(image),
+                    ),
+                  ),
+                ],
               ),
-              const Tab(text: "CALLS"),
+              const Tab(
+                text: "CALLS",
+              ),
             ],
           ),
         ),
@@ -118,29 +132,9 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
             ),
             Chats(),
             Status(),
-            const Calls(),
+            Calls(),
           ],
         ),
-        // body: ListView(
-        //   padding: const EdgeInsets.all(8),
-        //   children: const [
-        //     Chats(),
-        //     Chats(),
-        //     Chats(),
-        //     Chats(),
-        //     Chats(),
-        //     Chats(),
-        //     Chats(),
-        //     Chats(),
-        //     Chats(),
-        //     Chats(),
-        //   ],
-        // ),
-        // floatingActionButton: FloatingActionButton(
-        //   onPressed: () {},
-        //   tooltip: 'Increment',
-        //   child: const Icon(Icons.message),
-        // ),
       ),
     );
   }

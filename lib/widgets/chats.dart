@@ -8,7 +8,7 @@ class Chats extends StatelessWidget {
       "Lorem ipsum dolor sit amet consectetur." * 3,
       "assets/images/avatar-1.jpg",
       "14:27",
-      "6"
+      "2"
     ],
     [
       "Marc",
@@ -43,7 +43,7 @@ class Chats extends StatelessWidget {
       "Lorem ipsum dolor sit amet consectetur." * 3,
       "assets/images/avatar-6.jpg",
       "10:52",
-      "2"
+      "1"
     ],
     [
       "John",
@@ -57,21 +57,21 @@ class Chats extends StatelessWidget {
       "Lorem ipsum dolor sit amet consectetur." * 3,
       "assets/images/avatar-8.jpg",
       "Yesterday",
-      "20"
+      ""
     ],
     [
       "Maggie",
       "Lorem ipsum dolor sit amet consectetur." * 3,
       "assets/images/avatar-9.jpg",
       "13/07/2022",
-      "20"
+      "1"
     ],
     [
       "Thomas",
       "Lorem ipsum dolor sit amet consectetur." * 3,
       "assets/images/avatar-10.jpg",
       "13/07/2022",
-      "20"
+      "4"
     ],
   ];
 
@@ -83,7 +83,7 @@ class Chats extends StatelessWidget {
         int.parse(chats[4][4]) +
         int.parse(chats[5][4]) +
         // int.parse(chats[6][4]) +
-        int.parse(chats[7][4]) +
+        // int.parse(chats[7][4]) +
         int.parse(chats[8][4]) +
         int.parse(chats[9][4]);
   }
@@ -211,34 +211,93 @@ class Chats extends StatelessWidget {
     }
 
     return Scaffold(
+      backgroundColor: Colors.white,
       body: ListView(
         children: [
           _chats(
-              chats[0][0], chats[0][1], chats[0][2], chats[0][3], chats[0][4]),
+            chats[0][0],
+            chats[0][1],
+            chats[0][2],
+            chats[0][3],
+            chats[0][4],
+          ),
           _chats(
-              chats[1][0], chats[1][1], chats[1][2], chats[1][3], chats[1][4]),
+            chats[1][0],
+            chats[1][1],
+            chats[1][2],
+            chats[1][3],
+            chats[1][4],
+          ),
           _chats(
-              chats[2][0], chats[2][1], chats[2][2], chats[2][3], chats[2][4]),
+            chats[2][0],
+            chats[2][1],
+            chats[2][2],
+            chats[2][3],
+            chats[2][4],
+          ),
           _chats(
-              chats[3][0], chats[3][1], chats[3][2], chats[3][3], chats[3][4]),
+            chats[3][0],
+            chats[3][1],
+            chats[3][2],
+            chats[3][3],
+            chats[3][4],
+          ),
           _chats(
-              chats[4][0], chats[4][1], chats[4][2], chats[4][3], chats[4][4]),
+            chats[4][0],
+            chats[4][1],
+            chats[4][2],
+            chats[4][3],
+            chats[4][4],
+          ),
           _chats(
-              chats[5][0], chats[5][1], chats[5][2], chats[5][3], chats[5][4]),
+            chats[5][0],
+            chats[5][1],
+            chats[5][2],
+            chats[5][3],
+            chats[5][4],
+          ),
           _chats(
-              chats[6][0], chats[6][1], chats[6][2], chats[6][3], chats[6][4]),
+            chats[6][0],
+            chats[6][1],
+            chats[6][2],
+            chats[6][3],
+            chats[6][4],
+          ),
           _chats(
-              chats[7][0], chats[7][1], chats[7][2], chats[7][3], chats[7][4]),
+            chats[7][0],
+            chats[7][1],
+            chats[7][2],
+            chats[7][3],
+            chats[7][4],
+          ),
           _chats(
-              chats[8][0], chats[8][1], chats[8][2], chats[8][3], chats[8][4]),
+            chats[8][0],
+            chats[8][1],
+            chats[8][2],
+            chats[8][3],
+            chats[8][4],
+          ),
           _chats(
-              chats[9][0], chats[9][1], chats[9][2], chats[9][3], chats[9][4]),
+            chats[9][0],
+            chats[9][1],
+            chats[9][2],
+            chats[9][3],
+            chats[9][4],
+          ),
+          const SizedBox(
+            width: double.infinity,
+            height: 80,
+          ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        tooltip: 'Increment',
-        child: const Icon(Icons.message),
+      floatingActionButton: SizedBox(
+        width: 60,
+        height: 60,
+        child: FloatingActionButton(
+          onPressed: () {},
+          tooltip: 'Increment',
+          child: const Icon(Icons.message),
+        ),
       ),
     );
   }
