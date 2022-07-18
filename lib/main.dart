@@ -44,9 +44,14 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
         textTheme: ThemeData.light().textTheme.copyWith(
             // custom textTheme it will only affect the titles for the expenses
             subtitle1: const TextStyle(
-              fontFamily: "OpenSans",
+              // fontFamily: "OpenSans",
               fontSize: 18,
               fontWeight: FontWeight.bold,
+            ),
+            subtitle2: const TextStyle(
+              // fontFamily: "OpenSans",
+              fontSize: 18,
+              color: Color.fromARGB(190, 69, 90, 100),
             ),
             button: const TextStyle(
               color: Colors.grey,
@@ -77,30 +82,32 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
             tabs: [
               const Tab(icon: Icon(Icons.camera_alt)),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const Tab(
                     text: "CHATS",
                   ),
-                  Expanded(
-                    child: Container(
-                      width: 20,
-                      height: 20,
-                      // padding: const EdgeInsets.all(5.0),
-                      margin: const EdgeInsets.only(left: 5.0),
-                      decoration: const BoxDecoration(
-                        color: Colors.white,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Center(
-                          child: Text(Chats().result().toString(),
-                              style: const TextStyle(
-                                  color: Colors.teal,
-                                  fontWeight: FontWeight.w600))),
+                  Container(
+                    width: 16,
+                    height: 16,
+                    // padding: const EdgeInsets.all(5.0),
+                    margin: const EdgeInsets.only(left: 5),
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle,
                     ),
+                    child: Center(
+                        child: Text(Chats().result().toString(),
+                            style: const TextStyle(
+                                color: Colors.teal,
+                                fontWeight: FontWeight.w600))),
                   ),
                 ],
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: const [
                   Tab(
                     text: "STATUS",

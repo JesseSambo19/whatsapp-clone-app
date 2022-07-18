@@ -175,20 +175,14 @@ class Calls extends StatelessWidget {
                           Text(
                             name,
                             textAlign: TextAlign.left,
-                            style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18,
-                            ),
+                            style: Theme.of(context).textTheme.subtitle1,
                           ),
                           Row(
                             children: [
                               call,
                               Text(
                                 info,
-                                style: const TextStyle(
-                                  fontSize: 18,
-                                  color: Colors.grey,
-                                ),
+                                style: Theme.of(context).textTheme.subtitle2,
                               ),
                             ],
                           ),
@@ -201,7 +195,7 @@ class Calls extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 0, left: 30.0),
                   child: IconButton(
                     icon: callIcon,
-                    color: Colors.grey,
+                    color: Theme.of(context).textTheme.subtitle2?.color,
                     onPressed: () {},
                   ),
                 ),

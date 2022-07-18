@@ -2,73 +2,247 @@ import 'package:flutter/material.dart';
 
 class Chats extends StatelessWidget {
   // const Chats({Key? key}) : super(key: key);
-  List<List<String>> chats = [
+  List<List<dynamic>> chats = [
     [
       "Jason",
-      "Lorem ipsum dolor sit amet consectetur." * 3,
+      Flexible(
+        child: Text(
+          "Lorem ipsum dolor sit amet consectetur." * 3,
+          style: const TextStyle(
+            // fontFamily: "OpenSans",
+            fontSize: 18,
+            color: Color.fromARGB(190, 69, 90, 100),
+          ),
+          overflow: TextOverflow.ellipsis,
+        ),
+      ),
       "assets/images/avatar-1.jpg",
       "14:27",
       "2"
     ],
     [
       "Marc",
-      "Lorem ipsum dolor sit amet consectetur." * 3,
+      Row(
+        children: [
+          Stack(
+            children: const [
+              Icon(Icons.check, color: Colors.lightBlue),
+              Positioned(
+                  right: 5, child: Icon(Icons.check, color: Colors.lightBlue)),
+            ],
+          ),
+          Flexible(
+            child: Text(
+              "Lorem ipsum dolor sit amet consectetur." * 3,
+              style: const TextStyle(
+                // fontFamily: "OpenSans",
+                fontSize: 18,
+                color: Color.fromARGB(190, 69, 90, 100),
+              ),
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+        ],
+      ),
       "assets/images/avatar-2.jpg",
       "13:50",
       ""
     ],
     [
       "Sophie",
-      "Lorem ipsum dolor sit amet consectetur." * 3,
+      Row(
+        children: [
+          Stack(
+            children: const [
+              Icon(Icons.check, color: Colors.lightBlue),
+              Positioned(
+                  right: 5, child: Icon(Icons.check, color: Colors.lightBlue)),
+            ],
+          ),
+          Flexible(
+            child: Text(
+              "Lorem ipsum dolor sit amet consectetur." * 3,
+              style: const TextStyle(
+                // fontFamily: "OpenSans",
+                fontSize: 18,
+                color: Color.fromARGB(190, 69, 90, 100),
+              ),
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+        ],
+      ),
       "assets/images/avatar-3.jpg",
       "13:22",
       ""
     ],
     [
       "Jennifer",
-      "Lorem ipsum dolor sit amet consectetur." * 3,
+      Row(
+        children: [
+          Stack(
+            children: const [
+              Icon(
+                Icons.check,
+                color: Color.fromARGB(190, 69, 90, 100),
+              ),
+              Positioned(
+                  right: 5,
+                  child: Icon(
+                    Icons.check,
+                    color: Color.fromARGB(190, 69, 90, 100),
+                  )),
+            ],
+          ),
+          Flexible(
+            child: Text(
+              "Lorem ipsum dolor sit amet consectetur." * 3,
+              style: const TextStyle(
+                // fontFamily: "OpenSans",
+                fontSize: 18,
+                color: Color.fromARGB(190, 69, 90, 100),
+              ),
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+        ],
+      ),
       "assets/images/avatar-4.jpg",
       "12:52",
       ""
     ],
     [
       "William",
-      "Lorem ipsum dolor sit amet consectetur." * 3,
+      Row(
+        children: [
+          const Padding(
+            padding: EdgeInsets.only(right: 2.0),
+            child: Icon(Icons.photo_size_select_actual,
+                color: Color.fromARGB(190, 69, 90, 100)),
+          ),
+          Flexible(
+            child: Text(
+              "Lorem ipsum dolor sit amet consectetur." * 3,
+              style: const TextStyle(
+                // fontFamily: "OpenSans",
+                fontSize: 18,
+                color: Color.fromARGB(190, 69, 90, 100),
+              ),
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+        ],
+      ),
       "assets/images/avatar-5.jpg",
       "12:22",
       "1"
     ],
     [
       "Benedith",
-      "Lorem ipsum dolor sit amet consectetur." * 3,
+      Row(
+        children: const [
+          Icon(Icons.mic, color: Color.fromRGBO(37, 211, 102, 1)),
+          Flexible(
+            child: Text(
+              "0:21",
+              style: TextStyle(
+                // fontFamily: "OpenSans",
+                fontSize: 18,
+                color: Color.fromARGB(190, 69, 90, 100),
+              ),
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+        ],
+      ),
       "assets/images/avatar-6.jpg",
       "10:52",
       "1"
     ],
     [
       "John",
-      "Lorem ipsum dolor sit amet consectetur." * 3,
+      Row(
+        children: [
+          Icon(Icons.check, color: Color.fromARGB(190, 69, 90, 100)),
+          Flexible(
+            child: Text(
+              "Lorem ipsum dolor sit amet consectetur." * 3,
+              style: const TextStyle(
+                // fontFamily: "OpenSans",
+                fontSize: 18,
+                color: Color.fromARGB(190, 69, 90, 100),
+              ),
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+        ],
+      ),
       "assets/images/avatar-7.jpg",
       "Yesterday",
       ""
     ],
     [
       "Melissa",
-      "Lorem ipsum dolor sit amet consectetur." * 3,
+      Row(
+        children: const [
+          Icon(Icons.check, color: Color.fromARGB(190, 69, 90, 100)),
+          Padding(
+            padding: EdgeInsets.only(left: 2.0, right: 2.0),
+            child: Icon(Icons.photo_size_select_actual,
+                color: Color.fromARGB(190, 69, 90, 100)),
+          ),
+          Flexible(
+            child: Text(
+              "Photo",
+              style: TextStyle(
+                // fontFamily: "OpenSans",
+                fontSize: 18,
+                color: Color.fromARGB(190, 69, 90, 100),
+              ),
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+        ],
+      ),
       "assets/images/avatar-8.jpg",
       "Yesterday",
       ""
     ],
     [
       "Maggie",
-      "Lorem ipsum dolor sit amet consectetur." * 3,
+      Row(
+        children: const [
+          Icon(Icons.videocam, color: Color.fromARGB(190, 69, 90, 100)),
+          Flexible(
+            child: Text(
+              "Video",
+              style: TextStyle(
+                // fontFamily: "OpenSans",
+                fontSize: 18,
+                color: Color.fromARGB(190, 69, 90, 100),
+              ),
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+        ],
+      ),
       "assets/images/avatar-9.jpg",
       "13/07/2022",
       "1"
     ],
     [
       "Thomas",
-      "Lorem ipsum dolor sit amet consectetur." * 3,
+      Flexible(
+        child: Text(
+          "Lorem ipsum dolor sit amet consectetur." * 3,
+          style: const TextStyle(
+            // fontFamily: "OpenSans",
+            fontSize: 18,
+            color: Color.fromARGB(190, 69, 90, 100),
+          ),
+          overflow: TextOverflow.ellipsis,
+        ),
+      ),
       "assets/images/avatar-10.jpg",
       "13/07/2022",
       "4"
@@ -90,13 +264,13 @@ class Chats extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    _chats(String name, String message, String image, String time,
+    _chats(String name, Widget message, String image, String time,
         String counter) {
       Size size = MediaQuery.of(context).size;
       double _messageWidth = 0;
       return LayoutBuilder(builder: (context, constraints) {
         if (constraints.maxWidth > 480) {
-          _messageWidth = size.width * 0.75;
+          _messageWidth = size.width * 0.74;
         } else if (constraints.maxWidth > 330) {
           _messageWidth = size.width * 0.5;
         } else {
@@ -137,27 +311,9 @@ class Chats extends StatelessWidget {
                               Text(
                                 name,
                                 textAlign: TextAlign.left,
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18,
-                                ),
+                                style: Theme.of(context).textTheme.subtitle1,
                               ),
-                              Row(
-                                children: [
-                                  const Icon(Icons.check),
-                                  // const Icon(Icons.check),
-                                  Flexible(
-                                    child: Text(
-                                      message,
-                                      style: const TextStyle(
-                                        color: Colors.grey,
-                                        fontSize: 18,
-                                      ),
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
-                                  ),
-                                ],
-                              ),
+                              message,
                             ],
                           ),
                         ),
@@ -171,8 +327,11 @@ class Chats extends StatelessWidget {
                             children: [
                               Text(
                                 time,
-                                style: const TextStyle(
-                                  color: Colors.grey,
+                                style: TextStyle(
+                                  color: Theme.of(context)
+                                      .textTheme
+                                      .subtitle2
+                                      ?.color,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),

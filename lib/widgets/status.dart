@@ -60,7 +60,7 @@ class Status extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    _statusUpdate() {
+    _noStatusUpdate() {
       return SizedBox(
         width: double.infinity,
         height: 90,
@@ -111,21 +111,15 @@ class Status extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: const [
+                        children: [
                           Text(
                             "My status",
                             textAlign: TextAlign.left,
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18,
-                            ),
+                            style: Theme.of(context).textTheme.subtitle1,
                           ),
                           Text(
                             "Tap to add status update",
-                            style: TextStyle(
-                              fontSize: 18,
-                              color: Colors.grey,
-                            ),
+                            style: Theme.of(context).textTheme.subtitle2,
                           ),
                         ],
                       ),
@@ -149,7 +143,7 @@ class Status extends StatelessWidget {
       );
     }
 
-    _noStatusUpdate(String name, String update, String image) {
+    _statusUpdate(String name, String update, String image) {
       return SizedBox(
         width: double.infinity,
         height: 90,
@@ -189,17 +183,11 @@ class Status extends StatelessWidget {
                           Text(
                             name,
                             textAlign: TextAlign.left,
-                            style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18,
-                            ),
+                            style: Theme.of(context).textTheme.subtitle1,
                           ),
                           Text(
                             update,
-                            style: const TextStyle(
-                              fontSize: 18,
-                              color: Colors.grey,
-                            ),
+                            style: Theme.of(context).textTheme.subtitle2,
                           ),
                         ],
                       ),
@@ -259,17 +247,11 @@ class Status extends StatelessWidget {
                       Text(
                         name,
                         textAlign: TextAlign.left,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                        ),
+                        style: Theme.of(context).textTheme.subtitle1,
                       ),
                       Text(
                         update,
-                        style: const TextStyle(
-                          fontSize: 18,
-                          color: Colors.grey,
-                        ),
+                        style: Theme.of(context).textTheme.subtitle2,
                       ),
                     ],
                   ),
@@ -318,17 +300,11 @@ class Status extends StatelessWidget {
                       Text(
                         name,
                         textAlign: TextAlign.left,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                        ),
+                        style: Theme.of(context).textTheme.subtitle1,
                       ),
                       Text(
                         update,
-                        style: const TextStyle(
-                          fontSize: 18,
-                          color: Colors.grey,
-                        ),
+                        style: Theme.of(context).textTheme.subtitle2,
                       ),
                     ],
                   ),
@@ -344,17 +320,17 @@ class Status extends StatelessWidget {
       backgroundColor: Colors.white,
       body: ListView(
         children: [
-          _statusUpdate(),
-          _noStatusUpdate(
+          _noStatusUpdate(),
+          _statusUpdate(
               "My status", "Just now", "assets/images/profile-pic.jpg"),
           Container(
             alignment: Alignment.topLeft,
             padding: const EdgeInsets.only(top: 5, left: 20.0),
-            child: const Text(
+            child: Text(
               "Recent updates",
               style: TextStyle(
-                color: Colors.grey,
-                fontSize: 16,
+                color: Theme.of(context).textTheme.subtitle2?.color,
+                fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -387,11 +363,11 @@ class Status extends StatelessWidget {
           Container(
             alignment: Alignment.topLeft,
             padding: const EdgeInsets.only(top: 5, left: 20.0),
-            child: const Text(
+            child: Text(
               "Viewed updates",
               style: TextStyle(
-                color: Colors.grey,
-                fontSize: 16,
+                color: Theme.of(context).textTheme.subtitle2?.color,
+                fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
