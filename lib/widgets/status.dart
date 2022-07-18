@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone_app/widgets/camera.dart';
 
 class Status extends StatelessWidget {
   // const Status({Key? key}) : super(key: key);
@@ -61,255 +62,270 @@ class Status extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     _noStatusUpdate() {
-      return SizedBox(
-        width: double.infinity,
-        height: 90,
-        child: Card(
-          elevation: 0,
-          child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    Stack(
-                      children: [
-                        const SizedBox(
-                          width: 65,
-                          height: 60,
-                          child: CircleAvatar(
-                            radius: 27,
-                            backgroundImage:
-                                AssetImage("assets/images/profile-pic.jpg"),
+      return InkWell(
+        onTap: () {},
+        child: SizedBox(
+          width: double.infinity,
+          height: 90,
+          child: Card(
+            elevation: 0,
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Stack(
+                        children: [
+                          const SizedBox(
+                            width: 65,
+                            height: 60,
+                            child: CircleAvatar(
+                              radius: 27,
+                              backgroundImage:
+                                  AssetImage("assets/images/profile-pic.jpg"),
+                            ),
+                          ),
+                          Positioned(
+                            right: -1.5,
+                            bottom: -1.5,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  // color: Theme.of(context).primaryColor,
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                      color: Colors.white, width: 2)),
+                              child: const CircleAvatar(
+                                  backgroundColor:
+                                      Color.fromRGBO(18, 140, 126, 1),
+                                  radius: 12,
+                                  child: Icon(Icons.add, color: Colors.white)),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          top: 5.0,
+                          left: 20.0,
+                          bottom: 5.0,
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text(
+                              "My status",
+                              textAlign: TextAlign.left,
+                              style: Theme.of(context).textTheme.subtitle1,
+                            ),
+                            Text(
+                              "Tap to add status update",
+                              style: Theme.of(context).textTheme.subtitle2,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  // Padding(
+                  //   padding: const EdgeInsets.only(top: 0, left: 30.0),
+                  //   child: IconButton(
+                  //       icon: Icon(
+                  //         Icons.search,
+                  //         color: Theme.of(context).primaryColor,
+                  //       ),
+                  //       onPressed: () {}),
+                  // ),
+                  Container(),
+                ],
+              ),
+            ),
+          ),
+        ),
+      );
+    }
+
+    _statusUpdate(
+        {required String name, required String update, required String image}) {
+      return InkWell(
+        onTap: () {},
+        child: SizedBox(
+          width: double.infinity,
+          height: 90,
+          child: Card(
+            elevation: 0,
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(2.5),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: const Color.fromRGBO(37, 211, 102, 1),
+                            width: 2.5,
                           ),
                         ),
-                        Positioned(
-                          right: -1.5,
-                          bottom: -1.5,
-                          child: Container(
-                            decoration: BoxDecoration(
-                                // color: Theme.of(context).primaryColor,
-                                shape: BoxShape.circle,
-                                border:
-                                    Border.all(color: Colors.white, width: 2)),
-                            child: const CircleAvatar(
-                                backgroundColor:
-                                    Color.fromRGBO(18, 140, 126, 1),
-                                radius: 12,
-                                child: Icon(Icons.add, color: Colors.white)),
-                          ),
+                        child: CircleAvatar(
+                          radius: 27,
+                          backgroundImage: AssetImage(image),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          top: 5.0,
+                          left: 20.0,
+                          bottom: 5.0,
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text(
+                              name,
+                              textAlign: TextAlign.left,
+                              style: Theme.of(context).textTheme.subtitle1,
+                            ),
+                            Text(
+                              update,
+                              style: Theme.of(context).textTheme.subtitle2,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 0, left: 30.0),
+                    child: IconButton(
+                        icon: Icon(
+                          Icons.more_horiz,
+                          color: Theme.of(context).primaryColor,
+                        ),
+                        onPressed: () {}),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      );
+    }
+
+    _recentUpdates(
+        {required String name, required String update, required String image}) {
+      return InkWell(
+        onTap: () {},
+        child: SizedBox(
+          width: double.infinity,
+          height: 90,
+          child: Card(
+            elevation: 0,
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Row(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(2.5),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: const Color.fromRGBO(37, 211, 102, 1),
+                        width: 2.5,
+                      ),
+                    ),
+                    child: CircleAvatar(
+                      radius: 27,
+                      backgroundImage: AssetImage(image),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 5.0,
+                      left: 20.0,
+                      bottom: 5.0,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Text(
+                          name,
+                          textAlign: TextAlign.left,
+                          style: Theme.of(context).textTheme.subtitle1,
+                        ),
+                        Text(
+                          update,
+                          style: Theme.of(context).textTheme.subtitle2,
                         ),
                       ],
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                        top: 5.0,
-                        left: 20.0,
-                        bottom: 5.0,
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Text(
-                            "My status",
-                            textAlign: TextAlign.left,
-                            style: Theme.of(context).textTheme.subtitle1,
-                          ),
-                          Text(
-                            "Tap to add status update",
-                            style: Theme.of(context).textTheme.subtitle2,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-                // Padding(
-                //   padding: const EdgeInsets.only(top: 0, left: 30.0),
-                //   child: IconButton(
-                //       icon: Icon(
-                //         Icons.search,
-                //         color: Theme.of(context).primaryColor,
-                //       ),
-                //       onPressed: () {}),
-                // ),
-                Container(),
-              ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),
       );
     }
 
-    _statusUpdate(String name, String update, String image) {
-      return SizedBox(
-        width: double.infinity,
-        height: 90,
-        child: Card(
-          elevation: 0,
-          child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.all(2.5),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          color: const Color.fromRGBO(37, 211, 102, 1),
-                          width: 2.5,
+    _viewedUpdates(
+        {required String name, required String update, required String image}) {
+      return InkWell(
+        onTap: () {},
+        child: SizedBox(
+          width: double.infinity,
+          height: 90,
+          child: Card(
+            elevation: 0,
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Row(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(2.5),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: Colors.grey,
+                        width: 2.5,
+                      ),
+                    ),
+                    child: CircleAvatar(
+                      radius: 27,
+                      backgroundImage: AssetImage(image),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 5.0,
+                      left: 20.0,
+                      bottom: 5.0,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Text(
+                          name,
+                          textAlign: TextAlign.left,
+                          style: Theme.of(context).textTheme.subtitle1,
                         ),
-                      ),
-                      child: CircleAvatar(
-                        radius: 27,
-                        backgroundImage: AssetImage(image),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                        top: 5.0,
-                        left: 20.0,
-                        bottom: 5.0,
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Text(
-                            name,
-                            textAlign: TextAlign.left,
-                            style: Theme.of(context).textTheme.subtitle1,
-                          ),
-                          Text(
-                            update,
-                            style: Theme.of(context).textTheme.subtitle2,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 0, left: 30.0),
-                  child: IconButton(
-                      icon: Icon(
-                        Icons.more_horiz,
-                        color: Theme.of(context).primaryColor,
-                      ),
-                      onPressed: () {}),
-                ),
-              ],
-            ),
-          ),
-        ),
-      );
-    }
-
-    _recentUpdates(String name, String update, String image) {
-      return SizedBox(
-        width: double.infinity,
-        height: 90,
-        child: Card(
-          elevation: 0,
-          child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Row(
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(2.5),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(
-                      color: const Color.fromRGBO(37, 211, 102, 1),
-                      width: 2.5,
+                        Text(
+                          update,
+                          style: Theme.of(context).textTheme.subtitle2,
+                        ),
+                      ],
                     ),
                   ),
-                  child: CircleAvatar(
-                    radius: 27,
-                    backgroundImage: AssetImage(image),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    top: 5.0,
-                    left: 20.0,
-                    bottom: 5.0,
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Text(
-                        name,
-                        textAlign: TextAlign.left,
-                        style: Theme.of(context).textTheme.subtitle1,
-                      ),
-                      Text(
-                        update,
-                        style: Theme.of(context).textTheme.subtitle2,
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      );
-    }
-
-    _viewedUpdates(String name, String update, String image) {
-      return SizedBox(
-        width: double.infinity,
-        height: 90,
-        child: Card(
-          elevation: 0,
-          child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Row(
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(2.5),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(
-                      color: Colors.grey,
-                      width: 2.5,
-                    ),
-                  ),
-                  child: CircleAvatar(
-                    radius: 27,
-                    backgroundImage: AssetImage(image),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    top: 5.0,
-                    left: 20.0,
-                    bottom: 5.0,
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Text(
-                        name,
-                        textAlign: TextAlign.left,
-                        style: Theme.of(context).textTheme.subtitle1,
-                      ),
-                      Text(
-                        update,
-                        style: Theme.of(context).textTheme.subtitle2,
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
@@ -322,7 +338,10 @@ class Status extends StatelessWidget {
         children: [
           _noStatusUpdate(),
           _statusUpdate(
-              "My status", "Just now", "assets/images/profile-pic.jpg"),
+            name: "My status",
+            update: "Just now",
+            image: "assets/images/profile-pic.jpg",
+          ),
           Container(
             alignment: Alignment.topLeft,
             padding: const EdgeInsets.only(top: 5, left: 20.0),
@@ -336,29 +355,29 @@ class Status extends StatelessWidget {
             ),
           ),
           _recentUpdates(
-            recentUpdates[0][0],
-            recentUpdates[0][1],
-            recentUpdates[0][2],
+            name: recentUpdates[0][0],
+            update: recentUpdates[0][1],
+            image: recentUpdates[0][2],
           ),
           _recentUpdates(
-            recentUpdates[1][0],
-            recentUpdates[1][1],
-            recentUpdates[1][2],
+            name: recentUpdates[1][0],
+            update: recentUpdates[1][1],
+            image: recentUpdates[1][2],
           ),
           _recentUpdates(
-            recentUpdates[2][0],
-            recentUpdates[2][1],
-            recentUpdates[2][2],
+            name: recentUpdates[2][0],
+            update: recentUpdates[2][1],
+            image: recentUpdates[2][2],
           ),
           _recentUpdates(
-            recentUpdates[3][0],
-            recentUpdates[3][1],
-            recentUpdates[3][2],
+            name: recentUpdates[3][0],
+            update: recentUpdates[3][1],
+            image: recentUpdates[3][2],
           ),
           _recentUpdates(
-            recentUpdates[4][0],
-            recentUpdates[4][1],
-            recentUpdates[4][2],
+            name: recentUpdates[4][0],
+            update: recentUpdates[4][1],
+            image: recentUpdates[4][2],
           ),
           Container(
             alignment: Alignment.topLeft,
@@ -373,29 +392,29 @@ class Status extends StatelessWidget {
             ),
           ),
           _viewedUpdates(
-            viewedUpdates[0][0],
-            viewedUpdates[0][1],
-            viewedUpdates[0][2],
+            name: viewedUpdates[0][0],
+            update: viewedUpdates[0][1],
+            image: viewedUpdates[0][2],
           ),
           _viewedUpdates(
-            viewedUpdates[1][0],
-            viewedUpdates[1][1],
-            viewedUpdates[1][2],
+            name: viewedUpdates[1][0],
+            update: viewedUpdates[1][1],
+            image: viewedUpdates[1][2],
           ),
           _viewedUpdates(
-            viewedUpdates[2][0],
-            viewedUpdates[2][1],
-            viewedUpdates[2][2],
+            name: viewedUpdates[2][0],
+            update: viewedUpdates[2][1],
+            image: viewedUpdates[2][2],
           ),
           _viewedUpdates(
-            viewedUpdates[3][0],
-            viewedUpdates[3][1],
-            viewedUpdates[3][2],
+            name: viewedUpdates[3][0],
+            update: viewedUpdates[3][1],
+            image: viewedUpdates[3][2],
           ),
           _viewedUpdates(
-            viewedUpdates[4][0],
-            viewedUpdates[4][1],
-            viewedUpdates[4][2],
+            name: viewedUpdates[4][0],
+            update: viewedUpdates[4][1],
+            image: viewedUpdates[4][2],
           ),
           const SizedBox(
             width: double.infinity,
@@ -403,11 +422,6 @@ class Status extends StatelessWidget {
           ),
         ],
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () {},
-      //   tooltip: 'Increment',
-      //   child: const Icon(Icons.camera_alt),
-      // ),
       floatingActionButton: Wrap(
         //will break to another line on overflow
         direction: Axis.vertical, //use vertical to show  on vertical axis
@@ -441,6 +455,10 @@ class Status extends StatelessWidget {
               child: FloatingActionButton(
                 onPressed: () {
                   //action code for button 2
+                  // Navigator.of(context)
+                  //     .push(MaterialPageRoute(builder: (BuildContext context) {
+                  //   return const Camera();
+                  // }));
                 },
                 tooltip: 'Increment',
                 child: const Icon(Icons.camera_alt),

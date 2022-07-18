@@ -144,62 +144,73 @@ class Calls extends StatelessWidget {
       ],
     ];
 
-    _myCalls(
-        String name, String info, String image, Icon callIcon, Padding call) {
-      return SizedBox(
-        width: double.infinity,
-        height: 90,
-        child: Card(
-          elevation: 0,
-          child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    CircleAvatar(
-                      radius: 27,
-                      backgroundImage: AssetImage(image),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                        top: 5.0,
-                        left: 28.0,
-                        bottom: 5.0,
+    _myCalls({
+      required String name,
+      required String info,
+      required String image,
+      required Icon callIcon,
+      required Padding call,
+    }) {
+      return InkWell(
+        onTap: () {},
+        child: SizedBox(
+          width: double.infinity,
+          height: 90,
+          child: Card(
+            elevation: 0,
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      InkWell(
+                        onTap: () {},
+                        child: CircleAvatar(
+                          radius: 27,
+                          backgroundImage: AssetImage(image),
+                        ),
                       ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Text(
-                            name,
-                            textAlign: TextAlign.left,
-                            style: Theme.of(context).textTheme.subtitle1,
-                          ),
-                          Row(
-                            children: [
-                              call,
-                              Text(
-                                info,
-                                style: Theme.of(context).textTheme.subtitle2,
-                              ),
-                            ],
-                          ),
-                        ],
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          top: 5.0,
+                          left: 20.0, //was 28
+                          bottom: 5.0,
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text(
+                              name,
+                              textAlign: TextAlign.left,
+                              style: Theme.of(context).textTheme.subtitle1,
+                            ),
+                            Row(
+                              children: [
+                                call,
+                                Text(
+                                  info,
+                                  style: Theme.of(context).textTheme.subtitle2,
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 0, left: 30.0),
-                  child: IconButton(
-                    icon: callIcon,
-                    color: Theme.of(context).textTheme.subtitle2?.color,
-                    onPressed: () {},
+                    ],
                   ),
-                ),
-              ],
+                  Padding(
+                    padding: const EdgeInsets.only(top: 0),
+                    child: IconButton(
+                      icon: callIcon,
+                      color: Theme.of(context).textTheme.subtitle2?.color,
+                      onPressed: () {},
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -211,74 +222,74 @@ class Calls extends StatelessWidget {
       body: ListView(
         children: [
           _myCalls(
-            calls[0][0],
-            calls[0][1],
-            calls[0][2],
-            calls[0][3],
-            calls[0][4],
+            name: calls[0][0],
+            info: calls[0][1],
+            image: calls[0][2],
+            callIcon: calls[0][3],
+            call: calls[0][4],
           ),
           _myCalls(
-            calls[1][0],
-            calls[1][1],
-            calls[1][2],
-            calls[1][3],
-            calls[1][4],
+            name: calls[1][0],
+            info: calls[1][1],
+            image: calls[1][2],
+            callIcon: calls[1][3],
+            call: calls[1][4],
           ),
           _myCalls(
-            calls[2][0],
-            calls[2][1],
-            calls[2][2],
-            calls[2][3],
-            calls[2][4],
+            name: calls[2][0],
+            info: calls[2][1],
+            image: calls[2][2],
+            callIcon: calls[2][3],
+            call: calls[2][4],
           ),
           _myCalls(
-            calls[3][0],
-            calls[3][1],
-            calls[3][2],
-            calls[3][3],
-            calls[3][4],
+            name: calls[3][0],
+            info: calls[3][1],
+            image: calls[3][2],
+            callIcon: calls[3][3],
+            call: calls[3][4],
           ),
           _myCalls(
-            calls[4][0],
-            calls[4][1],
-            calls[4][2],
-            calls[4][3],
-            calls[4][4],
+            name: calls[4][0],
+            info: calls[4][1],
+            image: calls[4][2],
+            callIcon: calls[4][3],
+            call: calls[4][4],
           ),
           _myCalls(
-            calls[5][0],
-            calls[5][1],
-            calls[5][2],
-            calls[5][3],
-            calls[5][4],
+            name: calls[5][0],
+            info: calls[5][1],
+            image: calls[5][2],
+            callIcon: calls[5][3],
+            call: calls[5][4],
           ),
           _myCalls(
-            calls[6][0],
-            calls[6][1],
-            calls[6][2],
-            calls[6][3],
-            calls[6][4],
+            name: calls[6][0],
+            info: calls[6][1],
+            image: calls[6][2],
+            callIcon: calls[6][3],
+            call: calls[6][4],
           ),
           _myCalls(
-            calls[7][0],
-            calls[7][1],
-            calls[7][2],
-            calls[7][3],
-            calls[7][4],
+            name: calls[7][0],
+            info: calls[7][1],
+            image: calls[7][2],
+            callIcon: calls[7][3],
+            call: calls[7][4],
           ),
           _myCalls(
-            calls[8][0],
-            calls[8][1],
-            calls[8][2],
-            calls[8][3],
-            calls[8][4],
+            name: calls[8][0],
+            info: calls[8][1],
+            image: calls[8][2],
+            callIcon: calls[8][3],
+            call: calls[8][4],
           ),
           _myCalls(
-            calls[9][0],
-            calls[9][1],
-            calls[9][2],
-            calls[9][3],
-            calls[9][4],
+            name: calls[9][0],
+            info: calls[9][1],
+            image: calls[9][2],
+            callIcon: calls[9][3],
+            call: calls[9][4],
           ),
           const SizedBox(
             width: double.infinity,
