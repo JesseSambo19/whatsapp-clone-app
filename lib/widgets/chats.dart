@@ -300,6 +300,7 @@ class Chats extends StatelessWidget {
                           child: CircleAvatar(
                             radius: 27,
                             backgroundImage: AssetImage(image),
+                            backgroundColor: const Color.fromARGB(60, 69, 90, 100),
                           ),
                         ),
                         Padding(

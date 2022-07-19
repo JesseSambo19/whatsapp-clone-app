@@ -84,6 +84,7 @@ class Status extends StatelessWidget {
                               radius: 27,
                               backgroundImage:
                                   AssetImage("assets/images/profile-pic.jpg"),
+                              backgroundColor: Color.fromARGB(60, 69, 90, 100),
                             ),
                           ),
                           Positioned(
@@ -167,6 +168,8 @@ class Status extends StatelessWidget {
                         child: CircleAvatar(
                           radius: 27,
                           backgroundImage: AssetImage(image),
+                          backgroundColor:
+                              const Color.fromARGB(60, 69, 90, 100),
                         ),
                       ),
                       Padding(
@@ -237,6 +240,7 @@ class Status extends StatelessWidget {
                     child: CircleAvatar(
                       radius: 27,
                       backgroundImage: AssetImage(image),
+                      backgroundColor: const Color.fromARGB(60, 69, 90, 100),
                     ),
                   ),
                   Padding(
@@ -293,6 +297,7 @@ class Status extends StatelessWidget {
                     child: CircleAvatar(
                       radius: 27,
                       backgroundImage: AssetImage(image),
+                      backgroundColor: const Color.fromARGB(60, 69, 90, 100),
                     ),
                   ),
                   Padding(
