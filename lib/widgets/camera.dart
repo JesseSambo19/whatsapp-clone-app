@@ -48,8 +48,7 @@ class _CameraState extends State<Camera> {
       if (constraints.maxWidth > 480) {
         _imageWidth = size.width * 0.5;
         _imageHeight = size.width * 0.5;
-      }
-      else {
+      } else {
         _imageWidth = size.width * 0.75;
         _imageHeight = size.width * 0.75;
       }
@@ -78,7 +77,8 @@ class _CameraState extends State<Camera> {
                         //   fit: BoxFit.cover,
                         // ),
                         child: Container(
-                          decoration: const BoxDecoration(color: Colors.teal),
+                          decoration: const BoxDecoration(
+                              color: Color.fromARGB(80, 69, 90, 100)),
                           width: _imageWidth,
                           height: _imageHeight,
                           child: Center(
@@ -97,6 +97,9 @@ class _CameraState extends State<Camera> {
                   title: "Pick from Gallery",
                   icon: Icons.image_outlined,
                   onClick: () => getImage(ImageSource.gallery),
+                ),
+                const SizedBox(
+                  height: 20,
                 ),
                 CustomButton(
                   title: "Pick from Camera",
