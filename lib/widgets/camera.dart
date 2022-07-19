@@ -48,10 +48,8 @@ class _CameraState extends State<Camera> {
       if (constraints.maxWidth > 480) {
         _imageWidth = size.width * 0.5;
         _imageHeight = size.width * 0.5;
-      } else if (constraints.maxWidth > 330) {
-        _imageWidth = size.width * 0.75;
-        _imageHeight = size.width * 0.75;
-      } else {
+      }
+      else {
         _imageWidth = size.width * 0.75;
         _imageHeight = size.width * 0.75;
       }

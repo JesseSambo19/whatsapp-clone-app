@@ -250,16 +250,6 @@ class Chats extends StatelessWidget {
   ];
 
   result() {
-    // return int.parse(chats[0][4]) +
-    //     // int.parse(chats[1][4]) +
-    //     // int.parse(chats[2][4]) +
-    //     // int.parse(chats[3][4]) +
-    //     int.parse(chats[4][4]) +
-    //     int.parse(chats[5][4]) +
-    //     // int.parse(chats[6][4]) +
-    //     // int.parse(chats[7][4]) +
-    //     int.parse(chats[8][4]) +
-    //     int.parse(chats[9][4]);
     var chatsCounter = 0;
     for (int i = 0; i < 10; i++) {
       if (chats[i][4].isEmpty) {
@@ -326,7 +316,6 @@ class Chats extends StatelessWidget {
                               children: [
                                 Text(
                                   name,
-                                  textAlign: TextAlign.left,
                                   style: Theme.of(context).textTheme.subtitle1,
                                 ),
                                 message,
@@ -375,11 +364,14 @@ class Chats extends StatelessWidget {
                                         shape: BoxShape.circle,
                                       ),
                                       child: Center(
-                                          child: Text(messagesCounter,
-                                              style: const TextStyle(
-                                                  color: Colors.white,
-                                                  fontWeight:
-                                                      FontWeight.w600))),
+                                        child: Text(
+                                          messagesCounter,
+                                          style: const TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
+                                      ),
                                     ),
                                   ),
                                 ],

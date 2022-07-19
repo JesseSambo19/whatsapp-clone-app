@@ -184,7 +184,6 @@ class Calls extends StatelessWidget {
                           children: [
                             Text(
                               name,
-                              textAlign: TextAlign.left,
                               style: Theme.of(context).textTheme.subtitle1,
                             ),
                             Row(

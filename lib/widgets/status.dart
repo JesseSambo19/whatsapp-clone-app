@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_clone_app/widgets/camera.dart';
 
 class Status extends StatelessWidget {
   // const Status({Key? key}) : super(key: key);
@@ -117,7 +116,6 @@ class Status extends StatelessWidget {
                           children: [
                             Text(
                               "My status",
-                              textAlign: TextAlign.left,
                               style: Theme.of(context).textTheme.subtitle1,
                             ),
                             Text(
@@ -129,15 +127,6 @@ class Status extends StatelessWidget {
                       ),
                     ],
                   ),
-                  // Padding(
-                  //   padding: const EdgeInsets.only(top: 0, left: 30.0),
-                  //   child: IconButton(
-                  //       icon: Icon(
-                  //         Icons.search,
-                  //         color: Theme.of(context).primaryColor,
-                  //       ),
-                  //       onPressed: () {}),
-                  // ),
                   Container(),
                 ],
               ),
@@ -147,8 +136,11 @@ class Status extends StatelessWidget {
       );
     }
 
-    _statusUpdate(
-        {required String name, required String update, required String image}) {
+    _statusUpdate({
+      required String name,
+      required String update,
+      required String image,
+    }) {
       return InkWell(
         onTap: () {},
         child: SizedBox(
@@ -189,7 +181,6 @@ class Status extends StatelessWidget {
                           children: [
                             Text(
                               name,
-                              textAlign: TextAlign.left,
                               style: Theme.of(context).textTheme.subtitle1,
                             ),
                             Text(
@@ -218,8 +209,11 @@ class Status extends StatelessWidget {
       );
     }
 
-    _recentUpdates(
-        {required String name, required String update, required String image}) {
+    _recentUpdates({
+      required String name,
+      required String update,
+      required String image,
+    }) {
       return InkWell(
         onTap: () {},
         child: SizedBox(
@@ -257,7 +251,6 @@ class Status extends StatelessWidget {
                       children: [
                         Text(
                           name,
-                          textAlign: TextAlign.left,
                           style: Theme.of(context).textTheme.subtitle1,
                         ),
                         Text(
@@ -314,7 +307,6 @@ class Status extends StatelessWidget {
                       children: [
                         Text(
                           name,
-                          textAlign: TextAlign.left,
                           style: Theme.of(context).textTheme.subtitle1,
                         ),
                         Text(
@@ -453,13 +445,7 @@ class Status extends StatelessWidget {
                 // bottom: 5,
               ),
               child: FloatingActionButton(
-                onPressed: () {
-                  //action code for button 2
-                  // Navigator.of(context)
-                  //     .push(MaterialPageRoute(builder: (BuildContext context) {
-                  //   return const Camera();
-                  // }));
-                },
+                onPressed: () {},
                 tooltip: 'Increment',
                 child: const Icon(Icons.camera_alt),
               )), // button second
