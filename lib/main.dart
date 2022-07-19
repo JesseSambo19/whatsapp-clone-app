@@ -1,11 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:whatsapp_clone_app/widgets/calls.dart';
 import 'package:whatsapp_clone_app/widgets/camera.dart';
 import 'package:whatsapp_clone_app/widgets/chats.dart';
 import 'package:whatsapp_clone_app/widgets/status.dart';
 
-void main() {
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+// Keep splash screen until initialization is complete
+  // ignore: deprecated_member_use
+  FlutterNativeSplash.removeAfter(initialization);
+
   runApp(const MyApp());
+}
+
+Future initialization(BuildContext? context) async {
+  // Load resources
+  await Future.delayed(const Duration(seconds: 3));
 }
 
 class MyApp extends StatefulWidget {
