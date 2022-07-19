@@ -78,7 +78,7 @@ class _CameraState extends State<Camera> {
                         // ),
                         child: Container(
                           decoration: const BoxDecoration(
-                              color: Color.fromARGB(80, 69, 90, 100)),
+                              color: Color.fromARGB(60, 69, 90, 100)),
                           width: _imageWidth,
                           height: _imageHeight,
                           child: Center(
@@ -99,7 +99,7 @@ class _CameraState extends State<Camera> {
                   onClick: () => getImage(ImageSource.gallery),
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 5,
                 ),
                 CustomButton(
                   title: "Pick from Camera",
