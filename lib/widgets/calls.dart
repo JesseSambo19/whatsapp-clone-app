@@ -206,7 +206,7 @@ class Calls extends StatelessWidget {
                     padding: const EdgeInsets.only(top: 0),
                     child: IconButton(
                       icon: callIcon,
-                      color: Theme.of(context).textTheme.subtitle2?.color,
+                      color: Theme.of(context).primaryColor,
                       onPressed: () {},
                     ),
                   ),

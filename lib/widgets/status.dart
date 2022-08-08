@@ -48,7 +48,7 @@ class Status extends StatelessWidget {
     ],
     [
       "Maggie",
-      "Yessterday, 18:00",
+      "Yesterday, 18:00",
       "assets/images/avatar-9.jpg",
     ],
     [
