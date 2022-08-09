@@ -95,7 +95,7 @@ class _CameraState extends State<Camera> {
                 ),
                 CustomButton(
                   title: "Pick from Gallery",
-                  icon: Icons.image_outlined,
+                  icon: Icons.image_rounded,
                   onClick: () => getImage(ImageSource.gallery),
                 ),
                 const SizedBox(
@@ -103,7 +103,7 @@ class _CameraState extends State<Camera> {
                 ),
                 CustomButton(
                   title: "Pick from Camera",
-                  icon: Icons.camera,
+                  icon: Icons.camera_alt,
                   onClick: () => getImage(ImageSource.camera),
                 ),
                 const SizedBox(

@@ -300,7 +300,8 @@ class Chats extends StatelessWidget {
                           child: CircleAvatar(
                             radius: 27,
                             backgroundImage: AssetImage(image),
-                            backgroundColor: const Color.fromARGB(60, 69, 90, 100),
+                            backgroundColor:
+                                const Color.fromARGB(60, 69, 90, 100),
                           ),
                         ),
                         Padding(
@@ -344,39 +345,37 @@ class Chats extends StatelessWidget {
                               ],
                             ),
                           )
-                        : Positioned(
-                            child: Padding(
-                              padding: const EdgeInsets.only(top: 5),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: [
-                                  Text(
-                                    time,
-                                    style: const TextStyle(
-                                      color: Color.fromRGBO(37, 211, 102, 1),
-                                      fontWeight: FontWeight.w600,
-                                    ),
+                        : Padding(
+                            padding: const EdgeInsets.only(top: 5),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Text(
+                                  time,
+                                  style: const TextStyle(
+                                    color: Color.fromRGBO(37, 211, 102, 1),
+                                    fontWeight: FontWeight.w600,
                                   ),
-                                  Expanded(
-                                    child: Container(
-                                      padding: const EdgeInsets.all(5.0),
-                                      decoration: const BoxDecoration(
-                                        color: Color.fromRGBO(37, 211, 102, 1),
-                                        shape: BoxShape.circle,
-                                      ),
-                                      child: Center(
-                                        child: Text(
-                                          messagesCounter,
-                                          style: const TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w600,
-                                          ),
+                                ),
+                                Expanded(
+                                  child: Container(
+                                    padding: const EdgeInsets.all(5.0),
+                                    decoration: const BoxDecoration(
+                                      color: Color.fromRGBO(37, 211, 102, 1),
+                                      shape: BoxShape.circle,
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        messagesCounter,
+                                        style: const TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w600,
                                         ),
                                       ),
                                     ),
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ),
                   ],
